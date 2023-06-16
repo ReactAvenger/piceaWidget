@@ -91,6 +91,9 @@
       const token =
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0MTM5MGU4NS02MzdjLTQ1ZTUtOGZlOC01NmExZjdmMGMwMDEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoib3BlcmF0b3IxQGlycCIsIm5iZiI6MTY2NjI2NzE1MSwiZXhwIjoxNjY2MjcwNzUxLCJpc3MiOiJodHRwczovL29ubGluZS1yZC5waWNlYXNvZnQuY29tIiwiYXVkIjoicGljZWEtb25saW5lLWFwcGxpY2F0aW9uIn0.g2uuoaIrvi4N_Lxt00m8Qto1xyrEyZKe5y9gKvyJ8kk'
 
+				const url = new URL(window.location.href);
+				const sessionId = url.searchParams.get('session_id');
+
       function demo1() {
         picea.run({ user: 'operator1@irp', password: '111111', token, contractData, mode: 0 }, onTransactionCompleted)
       }
@@ -116,6 +119,6 @@
         picea.restore(
           { user: 'Taras_Test@tp', password: 'Test_Taras'},
           onTransactionCompleted,
-          '244bf95a-fc58-4aa5-b84f-a28d8609c8fc'
+          sessionId
         )
       }</script></body></html>
